@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module">
+        const rootElement = document.getElementById('root');
+        const h1 = document.createElement('h1');
+        rootElement.append(h1);
+        h1.textContent = 'Todo';
+        const p = document.createElement('p');
+        p.textContent = 'Todo description here';
+        rootElement.append(p);
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        rootElement.append(checkbox);
+        const label = document.createElement('label');
+        label.textContent = 'Done';
+        rootElement.append(label);
+
+    </script>
+
+</body>
+
+</html>

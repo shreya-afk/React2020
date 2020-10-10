@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documen</title>
+</head>
+
+<body>
+    <div id='root'></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <script type='text/babel'>
+        //Using Props with Stateless Functional ComponentsPassed
+        // class CampSite extends React.Component {
+        //     constructor(props) {
+        //         super(props);
+        //     }
+        //     render() {
+        //         return (
+
+        //             <Camper />
+
+        //         )
+
+        //     }
+
+        // }
+        // const Camper = (props) => {
+        //     return (
+        //         <div>
+        //             <h1> Name of the Camper is {props.name} </h1>
+        //             <p>{props.name}</p>
+        //         </div>
+        //     )
+        // }
+        // Camper.defaultProps = { name: 'CamperBots' };
+        // //Camper.propTypes = { name: PropTypes.string.isRequired };
+        // ReactDOM.render(<Camper />, document.getElementById('root'));
+
+
+        //Create a Stateful Component        
+
+        // class MyComponent extends React.Component {
+        //     constructor(props) {
+        //         super(props);
+        //         this.state = {
+        //             name: 'freeCodeCamp'
+        //         }
+        //     }
+        //     render() {
+        //         const name = this.state.name;
+        //         return (
+        //             <div>
+
+        //                 <h1>{name}</h1>
+
+        //             </div>
+        //         );
+        //     }
+        // };
+        // ReactDOM.render(<MyComponent/>, document.getElementById('root'));
+
+        //setting state with this.setState() 
+        class MyComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    name: 'Do not do it'
+                };
+                this.handleClick = this.handleClick.bind(this);//this binding is necessary to make'this' keyword work.
+            }
+            handleClick() {
+                // Change code below this line
+                this.setState({ name: "You clicked" });
+                // Change code above this line
+            }
+            render() {
+                return (
+                    <div>
+                        <button onClick={this.handleClick}>Don't Click Me</button>
+                        <h1>{this.state.name}</h1>
+                    </div>
+                );
+            }
+        };
+        ReactDOM.render(<MyComponent/>, document.getElementById('root'));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docume</title>
+
+</head>
+
+<body>
+    <!--3. Using react scripts from CDN and using them to create elements and render -->
+    <div id="welcome"></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // class Welcome extends React.Component {
+        //     render() {
+        //         return (
+        //             <div>
+        //                 Hello {this.props.name}
+        //             </div>
+        //         );
+        //     }
+        // }
+
+        // ReactDOM.render(<Welcome name="Pooja" />, document.getElementById('welcome'));
+
+        class Welcome extends React.component {
+            render() {
+                return <div> Hello {this.props.name} </div>
+            }
+        }
+        const element = (
+            <Welcome name={"Pooja"} /> 
+        );
+        
+        ReactDOM.render(element, document.getElementById("root"));
